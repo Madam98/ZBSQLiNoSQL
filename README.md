@@ -1,6 +1,6 @@
-# Opis projektu
+# Projekt z przedmiotu zarządzania bazami danych SQL oraz NoSQL
 
-Na potrzeby laboratorium z przedmiotu "Zarządzanie Bazami SQL i NoSQL"
+
 
 ## Skład grupy
 
@@ -8,50 +8,96 @@ Na potrzeby laboratorium z przedmiotu "Zarządzanie Bazami SQL i NoSQL"
 - Jakub Błażejowski
 - Adam Miernicki
 
-## Temat pracy
 
-Aplikacja umożliwiająca zbieranie informacji o zakupionych produktach spożywczych i planowanie zakupów.
 
-## Główne założenia
+## Opis projektu
 
-Część użytkowa aplikacji napisana będzie w języku Java, natomiast w celu składowania i przetwarzania danych używać będziemy bazy danych MySQL.
+#### 1. Analiza wymagań
 
-## Opis rzeczywistości
+Poniżej przedstawiony zostanie opis świata przedstawionego. Został on sporządzony w oparciu o pomysły danych członków grupy po przeanalizowaniu oraz zapoznaniu się z zasadą działania systemów odpowiedzialnych za przetwarzanie informacji w sprawie produktów. Sam pomysł na projekt wynika po części też z potrzeb osobistych, gdzie twórcy samego projektu wiedzą jakie mają wymagania co do wyniku końcowego. Po scharakteryzowaniu środowiska zostaną przedstawieni autorzy, którzy odzwierciedlają rzeczywiste role oraz funkcje jakie system powinien spełniać.
 
-Konto umożliwia na dostęp i modyfikację danych. Każde konto powiązane jest z unikalnym adresem email i zabezpieczone hasłem. W ramach konta przechowywane są również informacje opcjonalne takie jak imię i nazwisko. Konto może należeć do administratora, moderatora lub użytkownika.
 
-Z użytkownikiem powiązane są dodane przez niego produkty. Każdy produkt posiada nazwę, skład, wartości odżywcze i informację o dostępności produktu (możliwość archiwizacji jeżeli produkt przestanie być dostępny). Produkt opcjonalnie może też posiadać ocenę i recenzję napisaną przez użytkownika.
 
-Produkty produkowane są przez producentów, o unikalnej nazwie firmy. Dla każdego producenta należy również wskazać adres firmy.
+#### 2.Opis środowiska
 
-Produkty mogą być grupowane dzięki użyciu etykiet o unikalnej nazwie.
+Celem projektu jest utworzenie systemu służącego do zarządzania kupionymi produktami przez użytkownika. Tworzony system ma pomagać użytkownikowi zapisanie oraz odtworzenie informacji w sprawie swoich zakupionych produktów. Główne funkcje, które powinien wspomagać system to zapisywanie klientów wraz z ich zakupionymi produktami oraz możliwość rozszerzenia bazy o nowe produkty nie będące w systemie. Ważną kwestią także, z punktu widzenia systemu, będzie zapewnienie ochrony danych wszystkich podmiotów.
 
-Przy zakupie produktu należy zapisać cenę za którą produkt został zakupiony, ilość, informację czy produkt był w promocji w momencie zakupu, a także sklep w którym dokonano transakcji.
+Z perspektywy klienta, oprócz możliwości zapisywania swoich zakupów, istotny będzie system planowania swoich wydatków na podstawie różnych kryteriów (np. zakres możliwego budżetu użytkownika lub wymagana ilość do kupienia produktów w miesiącu). Użytkownik powinien mieć jak największą dowolność jeśli chodzi o tworzenie swoich danych produktów - w przypadku nie występowania takiego produktu w bazie użytkownik powinien mieć możliwość jego utworzenia. Dodatkowo użytkownik powinien mieć dostęp, w ramach swojego konta, dostęp do systemu ocen innych użytkowników. Pozwoli to użytkownikowi dobierać produkty nie tylko ze względu na cenę ale także na podstawie innych użytkowników. 
 
-Sklep charakteryzuje się adresem i nazwą, sklep może być również częścią większej sieci sklepów.
+Zapewnienie wszystkich wymienionych wyżej funkcjonalności jest związane z potrzebą przechowywania danych o klientach, produktach oraz ich producentów.
 
-Użytkownik może ustalić sumę pieniędzy którą chciałby wydać w ustalonym czasie, zwaną budżetem. Budżet może dotyczyć wszystkich produktów lub produktów oznaczonych wybranymi etykietami. Budżety mogą również odnawiać się po dacie ich wygaśnięcia. Budżet może posiadać nazwę ułatwiającą jego identyfikację przez użytkownika.
 
-Listy zakupów to zbiory wpisów czyli produktów już określonych, lub typów produktów. Wpis na liście zakupów musi zawierać informację o ilości produktu którą użytkownik chce zakupić, oraz ilości już zakupionej. Dla listy może być zdefiniowany okres w którym użytkownik powinien dokonać zakupu. Tak jak w przypadku budżetu, listy zakupów również mogą posiadać opcjonalną nazwę i odnawiać się cyklicznie.
 
-<div style="page-break-after: always; break-after: page;"></div>
+#### 3. Wymagania funkcjonalne
 
-## Opis funkcjonalności aplikacji
+1. **Tworzenie konta przez użytkownika**
 
-Administrator ma mieć możliwość tworzenia kont moderatorów.
+   ​    1.1 Utworzenie użytkownika w systemie
 
-Administrator (tylko jeden, brak możliwości usunięcia) i moderator powinni móc usuwać inne konta.
+   ​    1.2 Zaszyfrowanie podanego hasła w systemie
 
-Aplikacja powinna umożliwiać na tworzenie kont użytkowników, oraz logowanie się do wszystkich typów kont.
+2. **Możliwość wprowadzania zakupionych produktów**
 
-Użytkownik ma być głównym odbiorcą aplikacji. Dane wprowadzane przez użytkownika nie powinny w żaden sposób być dostępne dla innych użytkowników.
+3. **Narzędzia umożliwiające użytkownikowi segregację danych**
 
-Użytkownik powinien mieć możliwość dodawania, usuwania i modyfikacji własnej bazy produktów, sklepów, producentów, etykiet, budżetów i list.
+   ​	3.1 Sortowanie danych po nazwie
 
-Dla każdego produktu użytkownik powinien móc wielokrotnie zadeklarować jego zakupienie, podając niezbędne dane.
+   ​	3.2 Sortowanie danych po cenie 
 
-Aplikacja powinna ostrzegać użytkownika przed wykonaniem potencjalnie niebezpiecznych akcji (usuwanie etykiet, sklepów, producentów), oraz wyświetlenie ich konsekwencji.
+4. **Możliwość wprowadzania nowych produktów do bazy**
 
-Aplikacja powinna informować użytkownika jeżeli ma on niezakupione towary na liście której termin ważności jest blisko, lub kiedy zbliża się do przekroczenia któregoś z budżetów.
+   ​	4.1 Wprowadzenie nazwy produktu
 
-Użytkownik powinien mieć wgląd w historię dokonanych operacji, wraz z przydatnymi statystykami.
+   ​	4.2 Wprowadzenie ceny produktu
+
+   ​	4.3 Wprowadzenie producenta
+
+5. **Możliwość automatyzacji i kontroli pracy z danymi z bazy produktów**
+
+   ​	5.1 Zaplanowanie w kalendarzu przyszłych zakupów w bazie
+
+   ​	5.2 Wprowadzenie limitów do bazy przez użytkownika 
+
+   ​			5.2.1 Tworzenie ograniczeń na sumę kosztów na produkty na dany okres czasu
+
+   ​			5.2.2 Tworzenie ograniczeń na ilość możliwych zakupionych produktów na dany okres czasu
+
+6. **Prowadzenie systemu ocen użytkowników**
+
+   ​	6.1 Użytkownik każdemu produktowi może wystawić ocenę zadowolenia z produktu
+
+7. **Prowadzenie kontroli bazy**
+
+   ​	7.1 Usuwanie i dodawanie produktów z bazy przez moderatorów produktów
+
+   ​	7.2 Usuwanie klientów przez moderatorów klientów
+
+   
+
+#### 4. Wymagania niefunkcjonalne
+
+1. Aplikacja powinna posiadać wygodny i przejrzysty interfejs przeznaczony dla użytkownika w wersji graficznej
+2. Baza danych powinna posiadać możliwość przechowywania haseł oraz loginów w postaci zaszyfrowanej
+3. Aplikacją, którą będzie obsługiwał klient, zostanie zaimplementowana w języku Java (wersja 15)
+4. Baza przechowywana będzie na serwerze MySQL
+
+
+
+#### 5. Aktorzy
+
+**Osoba niezalogowana** - osoba oglądająca bazę produktów. Osoba ta może zobaczyć tylko jakie produkty znajdują się w bazie.
+
+**Użytkownik** - osoba korzystająca z bazy produktów. Główne jej zadania to pamiętanie swojego loginu oraz hasła do swojego profilu. Ma możliwość ustalenia i przygotowania swojej listy zakupów, wgląd w swoje poprzednie zakupione produkty oraz planowanie nowych zakupów 
+
+**Moderator produktów** - osoba posiadająca uprawnienia większe niż zalogowany użytkownik. Głównym zadaniem moderatora jest kontrola wprowadzanych produktów do bazy. W przypadku wykrycia pewnych nieścisłości ma możliwość usuwania oraz dodawania nowych produktów. Moderator nie może usuwać klientów z bazy.
+
+**Moderator w sprawie klientów** - osoba posiadająca uprawnienia większe niż zalogowany użytkownik. Głównym zadaniem moderatora jest usuwanie pewnych klientów.
+
+**Administrator** - *(poprawcie tutaj o co chodziło z tym logowaniem mnie)* osoba będąca też zalogowana do bazy z wszystkimi dostępami. Głównym jej zadaniem jest przydzielanie dostępów moderatorom.
+
+**Sama baza danych** - *tutaj też powiedzcie czy to jest potrzebne*
+
+
+
+
+
