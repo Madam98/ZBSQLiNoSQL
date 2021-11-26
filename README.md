@@ -38,40 +38,37 @@ Poniżej przedstawiony zostanie opis świata przedstawionego. Został on sporzą
 ### Wymagania funkcjonalne
 
 1. **Tworzenie konta użytkownika przez osobę niezalogowaną**
-2. **Logowanie się przez osobę niezalogowaną**
-3. **Usuwanie swojego konta przez użytkownika lub moderatora**
-4. **Definiowanie etykiet przez użytkownika**
-5. **Wprowadzanie produktów do swojego zbioru produktów przez użytkownika**
-6. **Wprowadzanie zakupionych produktów przez użytkownika**
-7. **Definiowanie budżetów przez użytkownika**
+1. **Logowanie się przez osobę niezalogowaną**
+1. **Usuwanie swojego konta przez użytkownika lub moderatora**
+1. **Definiowanie etykiet przez użytkownika**
+1. **Wprowadzanie produktów do swojego zbioru produktów przez użytkownika**
+1. **Wprowadzanie zakupionych produktów przez użytkownika**
+1. **Definiowanie budżetów przez użytkownika**
    1. Definiowanie budżetów w wersji cyklicznej
-8. **Definiowanie list zakupów przez użytkownika**
+1. **Definiowanie list zakupów przez użytkownika**
    1. Definiowanie list zakupów w wersji cyklicznej
-9. **Przeglądanie danych dostępnych dla użytkownika**
+1. **Przeglądanie danych dostępnych dla użytkownika**
    1. Sortowanie danych
-10. **Edycja danych dostępnych dla użytkownika**
-11. **Ocenianie produktów przez użytkownika**
+1. **Edycja danych dostępnych dla użytkownika**
+1. **Ocenianie produktów przez użytkownika**
    1. Wprowadzanie oceny punktowej
-   2. Wprowadzenie recenzji
-12. **Usuwanie danych dostępnych dla użytkownika**
-13. **Ograniczony wgląd w dane użytkowników dla moderatora lub administratora**
-14. **Usuwanie kont użytkowników przez moderatora lub administratora** 
-15. **Tworzenie konta moderatora przez administratora**
-16. **Usuwanie kont moderatorów przez administratora**
+   1. Wprowadzenie recenzji
+1. **Usuwanie danych dostępnych dla użytkownika**
+1. **Ograniczony wgląd w dane użytkowników dla moderatora lub administratora**
+1. **Usuwanie kont użytkowników przez moderatora lub administratora** 
+1. **Tworzenie konta moderatora przez administratora**
+1. **Usuwanie kont moderatorów przez administratora**
 
 ### Wymagania pozafunkcjonalne
 
 1. **Aplikacja powinna posiadać wygodny i przejrzysty interfejs przeznaczony dla użytkownika w wersji graficznej**
-2. **Baza danych powinna posiadać możliwość przechowywania haseł oraz loginów w postaci zaszyfrowanej**
-3. **Aplikacją, którą będzie obsługiwał klient, zostanie zaimplementowana w języku Java (wersja 17)**
-4. **Baza danych przechowywana będzie na serwerze MySQL**
+1. **Baza danych powinna posiadać możliwość przechowywania haseł oraz loginów w postaci zaszyfrowanej**
+1. **Aplikacją, którą będzie obsługiwał klient, zostanie zaimplementowana w języku Java (wersja 17)**
+1. **Baza danych przechowywana będzie na serwerze MySQL**
 
 ### Aktorzy
 
-**Osoba niezalogowana** - Osoba ta może utworzyć konto lub zalogować się na istniejące konto.
-
-**Użytkownik** - Osoba korzystająca z swojej bazy produktów. Główne jego zadania to pamiętanie swojego loginu oraz hasła do swojego profilu.
-
-**Moderator** - Osoba posiadająca uprawnienia większe niż użytkownik. Głównym zadaniem moderatora jest usuwanie klientów używających aplikacji w sposób nieodpowiedni.
-
-**Administrator** - Osoba posiadająca uprawnienia większe niż moderator. Głównym zadaniem administratora jest tworzenie i usuwanie kont moderatorów.
+1. **Osoba niezalogowana** - Osoba ta może utworzyć konto lub zalogować się na istniejące konto.
+1. **Użytkownik** - Osoba korzystająca z swojej bazy produktów. Główne jego zadania to pamiętanie swojego loginu oraz hasła do swojego profilu.
+1. **Moderator** - Osoba posiadająca uprawnienia większe niż użytkownik. Głównym zadaniem moderatora jest usuwanie klientów używających aplikacji w sposób nieodpowiedni.
+1. **Administrator** - Osoba posiadająca uprawnienia większe niż moderator. Głównym zadaniem administratora jest tworzenie i usuwanie kont moderatorów.
