@@ -62,7 +62,7 @@ Poniżej przedstawiony zostanie opis świata przedstawionego. Został on sporzą
 ### Wymagania pozafunkcjonalne
 
 1. **Aplikacja powinna posiadać wygodny i przejrzysty interfejs przeznaczony dla użytkownika w wersji graficznej**
-1. **Baza danych powinna posiadać możliwość przechowywania haseł oraz loginów w postaci zaszyfrowanej**
+1. **Baza danych powinna posiadać możliwość przechowywania haseł w postaci zaszyfrowanej**
 1. **Aplikacją, którą będzie obsługiwał klient, zostanie zaimplementowana w języku Java (wersja 17)**
 1. **Baza danych przechowywana będzie na serwerze MySQL**
 
