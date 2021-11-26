@@ -9,95 +9,69 @@
 - Adam Miernicki
 
 
+## Opis bazy danych
+
+### Opis rzeczywistości
+
+Konto umożliwia na dostęp i modyfikację danych. Każde konto powiązane jest z unikalnym adresem email i zabezpieczone hasłem. W ramach konta przechowywane są również informacje opcjonalne takie jak imię i nazwisko. Konto może należeć do administratora, moderatora lub użytkownika.
+
+Z użytkownikiem powiązane są dodane przez niego produkty. Każdy produkt posiada nazwę, skład, wartości odżywcze i informację o dostępności produktu (możliwość archiwizacji jeżeli produkt przestanie być dostępny). Produkt opcjonalnie może też posiadać ocenę i recenzję napisaną przez użytkownika.
+
+Produkty produkowane są przez producentów, o unikalnej nazwie firmy. Dla każdego producenta należy również wskazać adres firmy.
+
+Produkty mogą być grupowane dzięki użyciu etykiet o unikalnej nazwie.
+
+Przy zakupie produktu należy zapisać cenę za którą produkt został zakupiony, ilość, informację czy produkt był w promocji w momencie zakupu, a także sklep w którym dokonano transakcji.
+
+Sklep charakteryzuje się adresem i nazwą, sklep może być również częścią większej sieci sklepów.
+
+Użytkownik może ustalić sumę pieniędzy którą chciałby wydać w ustalonym czasie, zwaną budżetem. Budżet może dotyczyć wszystkich produktów lub produktów oznaczonych wybranymi etykietami. Budżety mogą również odnawiać się po dacie ich wygaśnięcia. Budżet może posiadać nazwę ułatwiającą jego identyfikację przez użytkownika.
+
+Listy zakupów to zbiory wpisów czyli produktów już określonych, lub typów produktów. Wpis na liście zakupów musi zawierać informację o ilości produktu którą użytkownik chce zakupić, oraz ilości już zakupionej. Dla listy może być zdefiniowany okres w którym użytkownik powinien dokonać zakupu. Tak jak w przypadku budżetu, listy zakupów również mogą posiadać opcjonalną nazwę i odnawiać się cyklicznie.
 
 ## Opis projektu
 
-#### 1. Analiza wymagań
+### Analiza wymagań
 
 Poniżej przedstawiony zostanie opis świata przedstawionego. Został on sporządzony w oparciu o pomysły danych członków grupy po przeanalizowaniu oraz zapoznaniu się z zasadą działania systemów odpowiedzialnych za przetwarzanie informacji w sprawie produktów. Sam pomysł na projekt wynika po części też z potrzeb osobistych, gdzie twórcy samego projektu wiedzą jakie mają wymagania co do wyniku końcowego. Po scharakteryzowaniu środowiska zostaną przedstawieni autorzy, którzy odzwierciedlają rzeczywiste role oraz funkcje jakie system powinien spełniać.
 
+### Wymagania funkcjonalne
 
+1. **Tworzenie konta użytkownika przez osobę niezalogowaną**
+2. **Logowanie się przez osobę niezalogowaną**
+3. **Usuwanie swojego konta przez użytkownika lub moderatora**
+4. **Definiowanie etykiet przez użytkownika**
+5. **Wprowadzanie produktów do swojego zbioru produktów przez użytkownika**
+6. **Wprowadzanie zakupionych produktów przez użytkownika**
+7. **Definiowanie budżetów przez użytkownika**
+   1. Definiowanie budżetów w wersji cyklicznej
+8. **Definiowanie list zakupów przez użytkownika**
+   1. Definiowanie list zakupów w wersji cyklicznej
+9. **Przeglądanie danych dostępnych dla użytkownika**
+   1. Sortowanie danych
+10. **Edycja danych dostępnych dla użytkownika**
+11. **Ocenianie produktów przez użytkownika**
+   1. Wprowadzanie oceny punktowej
+   2. Wprowadzenie recenzji
+12. **Usuwanie danych dostępnych dla użytkownika**
+13. **Ograniczony wgląd w dane użytkowników dla moderatora lub administratora**
+14. **Usuwanie kont użytkowników przez moderatora lub administratora** 
+15. **Tworzenie konta moderatora przez administratora**
+16. **Usuwanie kont moderatorów przez administratora**
 
-#### 2.Opis środowiska
+### Wymagania pozafunkcjonalne
 
-Celem projektu jest utworzenie systemu służącego do zarządzania kupionymi produktami przez użytkownika. Tworzony system ma pomagać użytkownikowi zapisanie oraz odtworzenie informacji w sprawie swoich zakupionych produktów. Główne funkcje, które powinien wspomagać system to zapisywanie klientów wraz z ich zakupionymi produktami oraz możliwość rozszerzenia bazy o nowe produkty nie będące w systemie. Ważną kwestią także, z punktu widzenia systemu, będzie zapewnienie ochrony danych wszystkich podmiotów.
+1. **Aplikacja powinna posiadać wygodny i przejrzysty interfejs przeznaczony dla użytkownika w wersji graficznej**
+2. **Baza danych powinna posiadać możliwość przechowywania haseł oraz loginów w postaci zaszyfrowanej**
+3. **Aplikacją, którą będzie obsługiwał klient, zostanie zaimplementowana w języku Java (wersja 17)**
+4. **Baza danych przechowywana będzie na serwerze MySQL**
 
-Z perspektywy klienta, oprócz możliwości zapisywania swoich zakupów, istotny będzie system planowania swoich wydatków na podstawie różnych kryteriów (np. zakres możliwego budżetu użytkownika lub wymagana ilość do kupienia produktów w miesiącu). Użytkownik powinien mieć jak największą dowolność jeśli chodzi o tworzenie swoich danych produktów - w przypadku nie występowania takiego produktu w bazie użytkownik powinien mieć możliwość jego utworzenia. Dodatkowo użytkownik powinien mieć dostęp, w ramach swojego konta, dostęp do systemu ocen innych użytkowników. Pozwoli to użytkownikowi dobierać produkty nie tylko ze względu na cenę ale także na podstawie innych użytkowników. 
+### Aktorzy
 
-Zapewnienie wszystkich wymienionych wyżej funkcjonalności jest związane z potrzebą przechowywania danych o klientach, produktach oraz ich producentów.
+**Osoba niezalogowana** - Osoba ta może utworzyć konto lub zalogować się na istniejące konto.
 
+**Użytkownik** - Osoba korzystająca z swojej bazy produktów. Główne jego zadania to pamiętanie swojego loginu oraz hasła do swojego profilu.
 
+**Moderator** - Osoba posiadająca uprawnienia większe niż użytkownik. Głównym zadaniem moderatora jest usuwanie klientów używających aplikacji w sposób nieodpowiedni.
 
-#### 3. Wymagania funkcjonalne
-
-1. **Tworzenie konta przez użytkownika**
-
-   ​    1.1 Utworzenie użytkownika w systemie
-
-   ​    1.2 Zaszyfrowanie podanego hasła w systemie
-
-2. **Możliwość wprowadzania zakupionych produktów**
-
-3. **Narzędzia umożliwiające użytkownikowi segregację danych**
-
-   ​	3.1 Sortowanie danych po nazwie
-
-   ​	3.2 Sortowanie danych po cenie 
-
-4. **Możliwość wprowadzania nowych produktów do bazy**
-
-   ​	4.1 Wprowadzenie nazwy produktu
-
-   ​	4.2 Wprowadzenie ceny produktu
-
-   ​	4.3 Wprowadzenie producenta
-
-5. **Możliwość automatyzacji i kontroli pracy z danymi z bazy produktów**
-
-   ​	5.1 Zaplanowanie w kalendarzu przyszłych zakupów w bazie
-
-   ​	5.2 Wprowadzenie limitów do bazy przez użytkownika 
-
-   ​			5.2.1 Tworzenie ograniczeń na sumę kosztów na produkty na dany okres czasu
-
-   ​			5.2.2 Tworzenie ograniczeń na ilość możliwych zakupionych produktów na dany okres czasu
-
-6. **Prowadzenie systemu ocen użytkowników**
-
-   ​	6.1 Użytkownik każdemu produktowi może wystawić ocenę zadowolenia z produktu
-
-7. **Prowadzenie kontroli bazy**
-
-   ​	7.1 Usuwanie i dodawanie produktów z bazy przez moderatorów produktów
-
-   ​	7.2 Usuwanie klientów przez moderatorów klientów
-
-   
-
-#### 4. Wymagania niefunkcjonalne
-
-1. Aplikacja powinna posiadać wygodny i przejrzysty interfejs przeznaczony dla użytkownika w wersji graficznej
-2. Baza danych powinna posiadać możliwość przechowywania haseł oraz loginów w postaci zaszyfrowanej
-3. Aplikacją, którą będzie obsługiwał klient, zostanie zaimplementowana w języku Java (wersja 15)
-4. Baza przechowywana będzie na serwerze MySQL
-
-
-
-#### 5. Aktorzy
-
-**Osoba niezalogowana** - osoba oglądająca bazę produktów. Osoba ta może zobaczyć tylko jakie produkty znajdują się w bazie.
-
-**Użytkownik** - osoba korzystająca z bazy produktów. Główne jej zadania to pamiętanie swojego loginu oraz hasła do swojego profilu. Ma możliwość ustalenia i przygotowania swojej listy zakupów, wgląd w swoje poprzednie zakupione produkty oraz planowanie nowych zakupów 
-
-**Moderator produktów** - osoba posiadająca uprawnienia większe niż zalogowany użytkownik. Głównym zadaniem moderatora jest kontrola wprowadzanych produktów do bazy. W przypadku wykrycia pewnych nieścisłości ma możliwość usuwania oraz dodawania nowych produktów. Moderator nie może usuwać klientów z bazy.
-
-**Moderator w sprawie klientów** - osoba posiadająca uprawnienia większe niż zalogowany użytkownik. Głównym zadaniem moderatora jest usuwanie pewnych klientów.
-
-**Administrator** - *(poprawcie tutaj o co chodziło z tym logowaniem mnie)* osoba będąca też zalogowana do bazy z wszystkimi dostępami. Głównym jej zadaniem jest przydzielanie dostępów moderatorom.
-
-**Sama baza danych** - *tutaj też powiedzcie czy to jest potrzebne*
-
-
-
-
-
+**Administrator** - Osoba posiadająca uprawnienia większe niż moderator. Głównym zadaniem administratora jest tworzenie i usuwanie kont moderatorów.
