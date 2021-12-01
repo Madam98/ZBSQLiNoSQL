@@ -13,7 +13,7 @@
 
 ### Opis rzeczywistości
 
-Konto umożliwia na dostęp i modyfikację danych. Każde konto powiązane jest z unikalnym adresem email i zabezpieczone hasłem. W ramach konta przechowywane są również informacje opcjonalne takie jak imię i nazwisko. Konto może należeć do administratora, moderatora lub użytkownika.
+Konto umożliwia na zarządzanie danymi. Do każdego konta przypisany jest unikalny adres email. Każde konto zabezpieczone jest hasłem. W ramach konta przechowywane są również informacje opcjonalne takie jak imię i nazwisko. Konto może należeć do administratora, moderatora lub użytkownika.
 
 Z użytkownikiem powiązane są dodane przez niego produkty. Każdy produkt posiada nazwę, skład, wartości odżywcze i informację o dostępności produktu (możliwość archiwizacji jeżeli produkt przestanie być dostępny). Produkt opcjonalnie może też posiadać ocenę i recenzję napisaną przez użytkownika.
 
@@ -21,13 +21,15 @@ Produkty produkowane są przez producentów, o unikalnej nazwie firmy. Dla każd
 
 Produkty mogą być grupowane dzięki użyciu etykiet o unikalnej nazwie.
 
-Przy zakupie produktu należy zapisać cenę za którą produkt został zakupiony, ilość, informację czy produkt był w promocji w momencie zakupu, a także sklep w którym dokonano transakcji.
+Przy zakupie produktu należy zapisać cenę za którą produkt został zakupiony, ilość, informację czy produkt był w promocji w momencie zakupu, datę zakupienia, a także sklep w którym dokonano transakcji.
 
-Sklep charakteryzuje się adresem i nazwą, sklep może być również częścią większej sieci sklepów.
+Sklep charakteryzuje się adresem i nazwą.
+
+Sklep może być również częścią większej sieci sklepów o unikalnej nazwie.
 
 Użytkownik może ustalić sumę pieniędzy którą chciałby wydać w ustalonym czasie, zwaną budżetem. Budżet może dotyczyć wszystkich produktów lub produktów oznaczonych wybranymi etykietami. Budżety mogą również odnawiać się po dacie ich wygaśnięcia. Budżet może posiadać nazwę ułatwiającą jego identyfikację przez użytkownika.
 
-Listy zakupów to zbiory wpisów czyli produktów już określonych, lub typów produktów. Wpis na liście zakupów musi zawierać informację o ilości produktu którą użytkownik chce zakupić, oraz ilości już zakupionej. Dla listy może być zdefiniowany okres w którym użytkownik powinien dokonać zakupu. Tak jak w przypadku budżetu, listy zakupów również mogą posiadać opcjonalną nazwę i odnawiać się cyklicznie.
+Listy zakupów to zbiory produktów już określonych, lub typów produktów. Wpis na liście zakupów musi zawierać informację o ilości produktu którą użytkownik chce zakupić, oraz ilości już zakupionej. Dla listy może być zdefiniowany termin dokonania zakupów przez użytkownika. Tak jak w przypadku budżetu, listy zakupów również mogą posiadać opcjonalną nazwę i odnawiać się cyklicznie.
 
 ## Opis projektu
 
