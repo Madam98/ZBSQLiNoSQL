@@ -25,11 +25,9 @@ Przy zakupie produktu należy zapisać cenę za którą produkt został zakupion
 
 Sklep charakteryzuje się adresem i nazwą.
 
-Sklep może być również częścią większej sieci sklepów o unikalnej nazwie.
-
 Użytkownik może ustalić sumę pieniędzy którą chciałby wydać w ustalonym czasie, zwaną budżetem. Budżet może dotyczyć wszystkich produktów lub produktów oznaczonych wybranymi etykietami. Budżety mogą również odnawiać się po dacie ich wygaśnięcia. Budżet może posiadać nazwę ułatwiającą jego identyfikację przez użytkownika.
 
-Listy zakupów to zbiory produktów już określonych, lub typów produktów. Wpis na liście zakupów musi zawierać informację o ilości produktu którą użytkownik chce zakupić, oraz ilości już zakupionej. Dla listy może być zdefiniowany termin dokonania zakupów przez użytkownika. Tak jak w przypadku budżetu, listy zakupów również mogą posiadać opcjonalną nazwę i odnawiać się cyklicznie.
+Listy zakupów to zbiory produktów już określonych, lub typów produktów. Wpis na liście zakupów musi zawierać informację o ilości produktu którą użytkownik chce zakupić. Dla listy może być wyznaczony termin dokonania zakupów przez użytkownika. Tak jak w przypadku budżetu, listy zakupów również mogą posiadać opcjonalną nazwę lub odnawiać się cyklicznie.
 
 ## Opis projektu
 
